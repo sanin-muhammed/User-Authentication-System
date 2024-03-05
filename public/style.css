@@ -1,0 +1,115 @@
+/* -----    GOOGLE FONTS : POPPINS    ----- */
+
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&display=swap");
+
+/*-----    MAIN CSS    -----*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+h2 {
+    color: #fff;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./images/Frame1.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.form_container {
+    overflow: hidden;
+    /* height: 600px; */
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: widthAnimation 0.3s  linear;
+    width: 500px;
+}
+@keyframes widthAnimation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 500px;
+    } 
+}
+form {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 50px;
+    animation: opacAnimation .8s ease-in;
+
+}
+@keyframes opacAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    } 
+}
+.loginForm {
+    height: 420px;
+    padding: 50px 50px;
+}
+.form_group:nth-child(4) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form_group label:first-child:not([for="gender"]) {
+    display: block;
+}
+.form_group input {
+    background: #cccccc70;
+    border: none;
+    outline: none;
+}
+.form_group input:not([type="radio"]) {
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+button {
+    padding: 7px 30px;
+    border: none;
+    background: #2e62ff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #0942ec;
+}
+.alert-success{
+    color: #08e508;
+}
+
+
+/* this is used to remove scroll in number type input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+

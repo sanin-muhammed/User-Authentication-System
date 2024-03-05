@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/style.css" />
+        <title>Login</title>
+    </head>
+    <body>
+        <h2>Sign Up</h2>
+        <div class="form_container">
+            <form class="signupForm" action="/signup" method="post">
+                <div class="form_group">
+                    <label for="name">Name </label>
+                    <input type="text" name="username" id="name" placeholder="Enter Your Name" required />
+                </div>
+                <div class="form_group">
+                    <label for="name">Email </label>
+                    <input type="email" name="email" id="email" placeholder="Enter Your Email" required />
+                </div>
+                <div class="form_group">
+                    <label for="name">Phone Number </label>
+                    <input type="number" name="phone" id="phoneNumber" placeholder="Enter Your Phone Number" required />
+                </div>
+                <div class="form_group">
+                    <label for="gender">Gender :</label>
+                    <input type="radio" name="gender" value="Male" id="male" required />
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" value="Female" id="female" required />
+                    <label for="female">Female</label>
+                </div>
+                <div class="form_group">
+                    <label for="password">Password </label>
+                    <input type="password" name="password" id="password" placeholder="Enter password" required />
+                </div>
+                <!-- <div class="form_group">
+                <label for="password">Confirm Password </label>
+                <input type="password" name="cpassword" id="cpassword" placeholder="Confirm password" required>
+            </div> -->
+                <button type="submit" class="submit_btn">Sign Up</button>
+                <p>Already Have an Account? <a href="/">Login</a></p>
+            </form>
+        </div>
+    </body>
+</html>
