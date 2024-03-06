@@ -41,5 +41,10 @@
                 <p>Already Have an Account? <a href="/">Login</a></p>
             </form>
         </div>
+        <% if (typeof signupMessage !== 'undefined') { %>
+            <div class="alert alert-success">
+              <%= signupMessage %>
+            </div>
+          <% } %>
     </body>
 </html>
