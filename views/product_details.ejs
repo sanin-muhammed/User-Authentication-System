@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- MAIN CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="/style.css" />
 
         <title>Product Details</title>
@@ -15,13 +16,13 @@
             <h2>Product Detail</h2>
             <div class="product_detail">
                 <div class="img_div">
+                    <a href="/products" class="backBtn fa-solid fa-backward"></a>
                     <img src="/<%=product.image %>" alt="image">
                 </div>
                 <div class="details_div">
                     <h1><%= product.name %></h1>
                     <h3 class="description"><%= product.description %></h3>
                     <h1 class="price"><%= product.price %>₹</h1>
-                
                 </div>
             </div>
         </div>

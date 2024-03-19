@@ -462,6 +462,20 @@ input[type="number"]::-webkit-outer-spin-button {
 .product_detail .img_div {
     width: 100%;
     height: 550px;
+    position: relative;
+}
+.backBtn{
+    position: absolute;
+    color: #ffffffaa;
+    text-decoration: none;
+    font-size: 35px;
+    top: 20px;
+    left: 20px;
+    animation: opacAnimation 1s ease-in ;
+    transition: .3s ease;
+}
+.backBtn:hover{
+    color: #fff;
 }
 .img_div img {
     width: 100%;
@@ -484,13 +498,14 @@ input[type="number"]::-webkit-outer-spin-button {
     letter-spacing: 1px;
     word-spacing: 5px;
     font-weight: lighter;
+    height: 310px;
+    overflow-y: scroll;
 }
 p.description {
     height: 60px;
-    overflow-y: scroll;
     font-size: 13px;
 }
-p.description::-webkit-scrollbar {
+.description::-webkit-scrollbar {
     display: none;
 }
 .price {
