@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="style.css" />
+
+        <title>Products</title>
+    </head>
+    <body class="products_body animated_body">
+        <%- include('partials/header') %>
+        <h2>PRODUCTS</h2>
+        <div class="products_lists">
+            <% productsList.forEach((product,index) => { %>
+            <a href="product_details/<%= product.id %>" class="product product_anim">
+                <img src="<%= product.image %>" alt="<%= product.name %>" />
+                <div class="list_body">
+                    <div>
+                        <h3 class="name"><%= product.name %></h3>
+                        <h4 class="price"><%= product.price %> ₹</h4>
+                    </div>
+                </div>
+            </a>
+            <% }) %>
+        </div>
+    </body>
+</html>

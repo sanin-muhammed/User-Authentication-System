@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+        <title>Document</title>
+    </head>
+    <body class="dashboard_body">
+        <%- include('partials/sidebar') %>
+
+        <div class="contents">
+            <%- include('partials/header') %>
+
+            <div class="users_lists">
+                <% userList.forEach((user,index) => { %>
+
+                <div class="users_list">
+                    <div class="delete_bar">
+                        <p class="user_count">User <%= index+1 %></p>
+                        <form class="btn_form" action="/toggle_user_status/<%= user.id %>" method="post">
+                            <button id="active_btn" class="active_btn">
+                                <% if (user.active == true) { %>
+                                    active
+                                <% } else { %>
+                                    inactive
+                                <% } %>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="list_body">
+                        <p>Name : <%= user.username %></p>
+                        <p>Email : <%= user.email %></p>
+                        <p>Phone number : <%= user.phone %></p>
+                        <p>Gender : <%= user.gender %></p>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </body>
+</html>

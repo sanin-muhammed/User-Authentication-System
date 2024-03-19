@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+        <title>Edit Product</title>
+    </head>
+    <body class="dashboard_body">
+        <%- include('partials/sidebar') %>
+
+        <div class="contents">
+            <%- include('partials/header') %>
+            <form class="product_form" action="/editProducts/<%= edit_product.id %>" method="POST" enctype="multipart/form-data">
+                <h3>Edit Product</h3>
+                <div class="form_group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required value="<%=edit_product.name %>"/>
+                </div>
+
+                <div class="form_group">
+                    <label for="description">Description:</label>
+                    <input id="description" name="description" rows="4" cols="50" value="<%=edit_product.description %>" required></input>
+                </div>
+
+                <div class="form_group">
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" required value="<%=edit_product.price %>"/>
+                </div>
+
+                <div class="form_group image_grp">
+                    <label for="image">Image:</label>
+                    <img src="../<%=edit_product.image %>"  alt="dkjkls" width="60px" height="60px">
+                    <input class="choosefile" type="file" id="image" name="image" accept="image/*"/>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

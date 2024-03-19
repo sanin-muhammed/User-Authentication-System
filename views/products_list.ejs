@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+        <title>Products List</title>
+    </head>
+    <body class="dashboard_body">
+        <%- include('partials/sidebar') %>
+
+        <div class="contents">
+            <%- include('partials/header') %>
+            <div class="product_header">
+                <a href="/createProducts">Create Product</a>
+                <h2>Product List</h2>
+            </div>
+
+            <div class="products_lists dashboard_p_list">
+                <% productsList.forEach((product,index) => { %>
+                <a href="/editProducts/<%= product.id %>" class="product product_edit">
+                    <div class="delete_bar">
+                        <p class="user_count">Product <%= index+1 %></p>
+                        <form class="btn_form" action="toggle_product_status/<%= product.id %>" method="post">
+                            <button id="active_btn" class="active_btn">
+                                <% if (product.active == true) { %>
+                                    active 
+                                <% } else { %> 
+                                    inactive <% } %>
+                            </button>
+                        </form>
+                    </div>
+                    <img src="<%= product.image %>" alt="<%= product.name %>" />
+                    <div class="list_body">
+                        <div>
+                            <h3 class="name"><%= product.name %></h3>
+                            <p class="description "><%= product.description%></p>
+                            <h4 class="price"><%= product.price %></h4>
+                        </div>
+                    </div>
+                </a>
+
+                <% }); %>
+            </div>
+        </div>
+    </body>
+</html>
